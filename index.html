@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>War Game</title>
+    <link rel="stylesheet" href="draw.css">
+        <css></css>
+    </link>
+</head>
+<body>
+
+    
+    <div class="containerHead" name ="header">
+        <div class="itemTitle"> 
+            <h1>WAR GAME</h1>
+            <div class="pointsPA" id="poitsPA">Player A: </div> 
+            <button id="start-game" >Game</button> 
+            <div class="pointsPB" id="pointsPB">Player B: </div>
+        </div>
+    </div>
+    
+    <div class="field" id="field">
+
+        <!-- ******************      GAME FIELD        ***************************** -->
+
+
+            <!-- ******   PLAYER A   ***** -->
+    
+            <div class="pA_DeckPos_DPA" type="button">
+                <div class="textBack">
+                    If We Don't End War, War Will End Us. 
+                </div>
+                <div class="textBack author">
+                    H.G. Wells
+                </div>
+            </div>
+            
+            <div class="pA_AtackPos" id="APA"></div>
+            
+            <div class="pA_AtackPos_BATTLE1" id="APA1"></div>
+            <div class="pA_AtackPos_BATTLE2" id="APA2"></div>
+            <div class="pA_AtackPos_BATTLE3" id="APA3"></div>
+            <div class="pA_AtackPos_BATTLE4" id="APA4"></div>
+    
+            <!-- ******   PLAYER B   ***** -->
+            
+            <div class="pB_AtackPos_BATTLE1" id="APB1"></div>
+            <div class="pB_AtackPos_BATTLE2" id="APB2"></div>
+            <div class="pB_AtackPos_BATTLE3" id="APB3"></div>
+            <div class="pB_AtackPos_BATTLE4" id="APB4"></div>
+    
+            <div class="pB_AtackPos" id="APB"></div>
+    
+            <div class="pB_DeckPos_DPB" type="button">
+                <div class="textBack">
+                If We Don't End War, War Will End Us. H.G. Wells 
+                </div>
+                <div class="textBack author">
+                    H.G. Wells
+                </div>
+            </div>
+
+            <!-- **************     BOTTOM BATTLE FIELD     **************** -->
+            <div class="next-button" id="next-button"></div>
+
+
+        <!-- ************    BACK    ********************-->
+
+        
+
+            
+       
+        
+        <!-- ************    CARDS ACES    ********************-->
+
+        <div class="card invisible" id="AS" data-value="14" >
+            <div class="allTopLeft">
+                <div class="cardNumber">A</div>    
+                <img src="./images/spade.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+
+            <div class="shappeA"><img src="./images/spade.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/spade.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber rotate">A</div>
+            </div>
+        </div>
+
+        <div class="card invisible" id="AC" data-value="14">
+            <div class="allTopLeft">
+                <div class="cardNumber">A</div>    
+                <img src="./images/club.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappeA"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="allBottomRight">
+                <img src="./images/club.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">A</div>
+            </div>
+        </div>
+
+        <div class="card heart invisible" id="AH" data-value="14">
+            <div class="allTopLeft">
+                <div class="cardNumber">A</div>    
+                <img src="./images/heart.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappeA"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="allBottomRight">
+                <img src="./images/heart.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">A</div>
+            </div>
+        </div>
+
+        <div class="card diamond invisible" id="AD" data-value="14">
+            <div class="allTopLeft">
+                <div class="cardNumber">A</div>    
+                <img src="./images/diamond.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappeA"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="allBottomRight">
+                <img src="./images/diamond.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">A</div>
+            </div>
+        </div>
+
+
+
+        <!-- ************    CARDS QUEEN    ********************-->
+
+        <div class="card invisible" id="QS" data-value="12">
+            <div class="allTopLeft">
+                <div class="cardNumber">Q</div>    
+                <img src="./images/spade.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappeA"><img src="./images/queen-black.svg" alt="Naipe"></div>
+            <div class="allBottomRight">
+                <img src="./images/spade.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">Q</div>
+            </div>
+        </div>
+
+        <div class="card invisible" id="QC" data-value="12">
+            <div class="allTopLeft">
+                <div class="cardNumber">Q</div>    
+                <img src="./images/club.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappeA"><img src="./images/queen-black.svg" alt="Naipe"></div>
+            <div class="allBottomRight">
+                <img src="./images/club.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">Q</div>
+            </div>
+        </div>
+
+        <div class="card heart invisible" id="QH" data-value="12">
+            <div class="allTopLeft">
+                <div class="cardNumber">Q</div>    
+                <img src="./images/heart.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappeA"><img src="./images/queen-red.svg" alt="Naipe"></div>
+            <div class="allBottomRight">
+                <img src="./images/heart.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">Q</div>
+            </div>
+        </div>
+
+        <div class="card diamond invisible" id="QD" data-value="12">
+            <div class="allTopLeft">
+                <div class="cardNumber">Q</div>    
+                <img src="./images/diamond.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappeA"><img src="./images/queen-red.svg" alt="Naipe"></div>
+            <div class="allBottomRight">
+                <img src="./images/diamond.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">Q</div>
+            </div>
+        </div>
+
+
+        <!-- ************    CARDS KING     ********************-->
+
+        <div class="card invisible" id="KS" data-value="13">
+            <div class="allTopLeft">
+                <div class="cardNumber">K</div>    
+                <img src="./images/spade.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappeA"><img src="./images/king-black.svg" alt="Naipe"></div>
+            <div class="allBottomRight">
+                <img src="./images/spade.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">K</div>
+            </div>
+        </div>
+
+        <div class="card invisible" id="KC" data-value="13">
+            <div class="allTopLeft">
+                <div class="cardNumber">K</div>    
+                <img src="./images/club.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappeA"><img src="./images/king-black.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/club.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">K</div>
+            </div>
+        </div>
+
+        <div class="card heart invisible" id="KH" data-value="13">
+            <div class="allTopLeft">
+                <div class="cardNumber">K</div>    
+                <img src="./images/heart.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappeA"><img src="./images/king-red.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/heart.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">K</div>
+            </div>
+        </div>
+
+        <div class="card diamond invisible" id="KD" data-value="13">
+            <div class="allTopLeft">
+                <div class="cardNumber">K</div>    
+                <img src="./images/diamond.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappeA"><img src="./images/king-red.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/diamond.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">K</div>
+            </div>
+        </div>
+
+        <!-- ************    CARDS NUMBER J     ********************-->
+
+
+        <div class="card invisible" id="JS" data-value="11">
+            <div class="allTopLeft">
+                <div class="cardNumber">J</div>    
+                <img src="./images/spade.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappeA"><img src="./images/jack-black.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/spade.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">J</div>
+            </div>
+        </div>
+
+        <div class="card invisible" id="JC" data-value="11">
+            <div class="allTopLeft">
+                <div class="cardNumber">J</div>    
+                <img src="./images/club.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappeA"><img src="./images/jack-black.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/club.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">J</div>
+            </div>
+        </div>
+
+        <div class="card heart invisible" id="JH" data-value="11">
+            <div class="allTopLeft">
+                <div class="cardNumber">J</div>    
+                <img src="./images/heart.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappeA"><img src="./images/jack-red.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/heart.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">J</div>
+            </div>
+        </div>
+
+        <div class="card diamond invisible" id="JD" data-value="11">
+            <div class="allTopLeft">
+                <div class="cardNumber">J</div>    
+                <img src="./images/diamond.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappeA"><img src="./images/jack-red.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/diamond.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">J</div>
+            </div>
+        </div>
+       
+
+        <!-- ************    CARDS NUMBER 2     ********************-->
+
+
+        <div class="card invisible" id="2S" data-value="2" name="card2">
+            <div class="allTopLeft">
+                <div class="cardNumber">2</div>    
+                <img src="./images/spade.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe3_1"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe3_3 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/spade.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">2</div>
+            </div>
+        </div>
+
+        <div class="card invisible" id="2C" data-value="2">
+            <div class="allTopLeft">
+                <div class="cardNumber">2</div>    
+                <img src="./images/club.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe3_1"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe3_3 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/club.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">2</div>
+            </div>
+        </div>
+
+        <div class="card diamond invisible" id="2D" data-value="2">
+            <div class="allTopLeft">
+                <div class="cardNumber">2</div>    
+                <img src="./images/diamond.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe3_1"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe3_3 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/diamond.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">2</div>
+            </div>
+        </div>
+
+        <div class="card heart invisible" id="2H" data-value="2">
+            <div class="allTopLeft">
+                <div class="cardNumber">2</div>    
+                <img src="./images/heart.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe3_1"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe3_3 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/heart.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">2</div>
+            </div>
+        </div>
+
+
+        <!-- ************    CARDS NUMBER 3     ********************-->
+        
+        <div class="card invisible" id="3C" data-value="3">
+            <div class="allTopLeft">
+                <div class="cardNumber">3</div>    
+                <img src="./images/club.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+
+            <div class="shappe3_1"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe3_2"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe3_3"><img src="./images/club.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/club.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">3</div>
+            </div>
+        </div>
+
+        <div class="card invisible" id="3S" data-value="3">
+            <div class="allTopLeft">
+                <div class="cardNumber">3</div>    
+                <img src="./images/spade.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe3_1"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe3_2"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe3_3"><img src="./images/spade.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/spade.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">3</div>
+            </div>
+        </div>
+        
+        <div class="card diamond invisible" id="3D" data-value="3">
+            <div class="allTopLeft">
+                <div class="cardNumber">3</div>    
+                <img src="./images/diamond.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe3_1"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe3_2"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe3_3"><img src="./images/diamond.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/diamond.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">3</div>
+            </div>
+        </div>
+        <div class="card heart invisible" id="3H" data-value="3">
+            <div class="allTopLeft">
+                <div class="cardNumber">3</div>    
+                <img src="./images/heart.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe3_1"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe3_2"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe3_3"><img src="./images/heart.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/heart.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">3</div>
+            </div>
+        </div>
+
+        <!-- ************    CARDS NUMBER 4     ********************-->
+
+        <div class="card invisible" id="4C" data-value="4">
+            <div class="allTopLeft">
+                <div class="cardNumber">4</div>    
+                <img src="./images/club.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/club.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">4</div>
+            </div>
+        </div>
+
+        <div class="card invisible" id="4S" data-value="4">
+            <div class="allTopLeft">
+                <div class="cardNumber">4</div>    
+                <img src="./images/spade.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/spade.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">4</div>
+            </div>
+        </div>
+
+        <div class="card heart invisible" id="4H" data-value="4">
+            <div class="allTopLeft">
+                <div class="cardNumber">4</div>    
+                <img src="./images/heart.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/heart.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">4</div>
+            </div>
+        </div>
+
+        <div class="card diamond invisible" id="4D" data-value="4">
+            <div class="allTopLeft">
+                <div class="cardNumber">4</div>    
+                <img src="./images/diamond.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/diamond.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">4</div>
+            </div>
+        </div>
+
+        <!-- ************    CARDS NUMBER 5     ********************-->
+
+        <div class="card invisible" id="5C" data-value="5">
+            <div class="allTopLeft">
+                <div class="cardNumber">5</div>    
+                <img src="./images/club.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe5"><img src="./images/club.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/club.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">5</div>
+            </div>
+        </div>
+
+        <div class="card invisible" id="5S" data-value="5">
+            <div class="allTopLeft">
+                <div class="cardNumber">5</div>    
+                <img src="./images/spade.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe5"><img src="./images/spade.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/spade.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">5</div>
+            </div>
+        </div>
+
+        <div class="card heart invisible" id="5H" data-value="5">
+            <div class="allTopLeft">
+                <div class="cardNumber">5</div>    
+                <img src="./images/heart.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe5"><img src="./images/heart.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/heart.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">5</div>
+            </div>
+        </div>
+
+        <div class="card diamond invisible" id="5D" data-value="5">
+            <div class="allTopLeft">
+                <div class="cardNumber">5</div>    
+                <img src="./images/diamond.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe5"><img src="./images/diamond.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/diamond.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">5</div>
+            </div>
+        </div>
+        
+
+        <!-- ************    CARDS NUMBER 6     ********************-->
+
+        <div class="card invisible" id="6C" data-value="6">
+            <div class="allTopLeft">
+                <div class="cardNumber">6</div>    
+                <img src="./images/club.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe6_5"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe6"><img src="./images/club.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/club.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">6</div>
+            </div>
+        </div>
+
+        <div class="card invisible" id="6S" data-value="6">
+            <div class="allTopLeft">
+                <div class="cardNumber">6</div>    
+                <img src="./images/spade.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe6_5"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe6"><img src="./images/spade.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight" data-value="6">
+                <img src="./images/spade.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">6</div>
+            </div>
+        </div>
+
+        <div class="card heart invisible" id="6H" data-value="6">
+            <div class="allTopLeft">
+                <div class="cardNumber">6</div>    
+                <img src="./images/heart.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe6_5"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe6"><img src="./images/heart.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/heart.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">6</div>
+            </div>
+        </div>
+
+        <div class="card diamond invisible" id="6D" data-value="6">
+            <div class="allTopLeft">
+                <div class="cardNumber">6</div>    
+                <img src="./images/diamond.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe6_5"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe6"><img src="./images/diamond.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/diamond.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">6</div>
+            </div>
+        </div>
+
+        <!-- ************    CARDS NUMBER 7     ********************-->
+
+        <div class="card invisible" id="7C" data-value="7">
+            <div class="allTopLeft">
+                <div class="cardNumber">7</div>    
+                <img src="./images/club.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe6_5"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe6"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe7"><img src="./images/club.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/club.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">7</div>
+            </div>
+        </div>
+
+        <div class="card invisible" id="7S" data-value="7">
+            <div class="allTopLeft">
+                <div class="cardNumber">7</div>    
+                <img src="./images/spade.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe6_5"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe6"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe7"><img src="./images/spade.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/spade.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">7</div>
+            </div>
+        </div>
+
+        <div class="card heart invisible" id="7H" data-value="7">
+
+            <div class="allTopLeft">
+                <div class="cardNumber">7</div>    
+                <img src="./images/heart.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe6_5"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe6"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe7"><img src="./images/heart.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/heart.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">7</div>
+            </div>
+        </div>
+
+        <div class="card diamond invisible" id="7D" data-value="7">
+            <div class="allTopLeft">
+                <div class="cardNumber">7</div>    
+                <img src="./images/diamond.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe6_5"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe6"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe7"><img src="./images/diamond.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/diamond.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">7</div>
+            </div>
+        </div>
+
+        <!-- ************    CARDS NUMBER 8     ********************-->
+
+        <div class="card invisible" id="8C" data-value="8">
+            <div class="allTopLeft">
+                <div class="cardNumber">8</div>    
+                <img src="./images/club.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe6_5"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe6"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe7"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe8 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/club.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">8</div>
+            </div>
+        </div>
+
+        <div class="card invisible" id="8S" data-value="8">
+            <div class="allTopLeft">
+                <div class="cardNumber">8</div>    
+                <img src="./images/spade.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe6_5"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe6"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe7"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe8 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/spade.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">8</div>
+            </div>
+        </div>
+
+        <div class="card heart invisible" id="8H" data-value="8">
+            <div class="allTopLeft">
+                <div class="cardNumber">8</div>    
+                <img src="./images/heart.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe6_5"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe6"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe7"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe8 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/heart.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">8</div>
+            </div>
+        </div>
+
+        <div class="card diamond invisible" id="8D" data-value="8">
+            <div class="allTopLeft">
+                <div class="cardNumber">8</div>    
+                <img src="./images/diamond.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe6_5"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe6"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe7"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe8 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/diamond.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">8</div>
+            </div>
+        </div>
+
+
+
+        <!-- ************    CARDS NUMBER 9     ********************-->
+
+        <div class="card invisible" id="9C" data-value="9">
+            <div class="allTopLeft">
+                <div class="cardNumber">9</div>    
+                <img src="./images/club.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            
+            <div class="shappe9_7"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe9_8 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe9_9"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe9 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe9_1"><img src="./images/club.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/club.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">9</div>
+            </div>
+        </div>
+
+        <div class="card invisible" id="9S" data-value="9">
+            <div class="allTopLeft">
+                <div class="cardNumber">9</div>    
+                <img src="./images/spade.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            
+            <div class="shappe9_7"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe9_8 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe9_9"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe9 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe9_1"><img src="./images/spade.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/spade.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">9</div>
+            </div>
+        </div>
+
+        <div class="card heart invisible" id="9H" data-value="9">
+            <div class="allTopLeft">
+                <div class="cardNumber">9</div>    
+                <img src="./images/heart.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            
+            <div class="shappe9_7"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe9_8 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe9_9"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe9 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe9_1"><img src="./images/heart.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/heart.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">9</div>
+            </div>
+        </div>
+
+        <div class="card diamond invisible" id="9D" ata-value="9">
+            <div class="allTopLeft">
+                <div class="cardNumber">9</div>    
+                <img src="./images/diamond.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            
+            <div class="shappe9_7"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe9_8 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe9_9"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe9 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe9_1"><img src="./images/diamond.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+            
+            <div class="allBottomRight">
+                <div class="cardNumber bottomRightNumber rotate">9</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ************    CARDS NUMBER 10     ********************-->
+
+        <div class="card invisible" id="10C" data-value="10">
+            <div class="allTopLeft">
+                <div class="cardNumber">10</div>    
+                <img src="./images/club.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            
+            <div class="shappe9_7"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe9_8 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe9_9"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe9 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe10"><img src="./images/club.svg" alt="Naipe"></div>
+            <div class="shappe10_1 rotate"><img src="./images/club.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/club.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">10</div>
+            </div>
+        </div>
+
+        <div class="card invisible" id="10S" data-value="10">
+            <div class="allTopLeft">
+                <div class="cardNumber">10</div>    
+                <img src="./images/spade.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            
+            <div class="shappe9_7"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe9_8 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe9_9"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe9 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe10"><img src="./images/spade.svg" alt="Naipe"></div>
+            <div class="shappe10_1 rotate"><img src="./images/spade.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/spade.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">10</div>
+            </div>
+        </div>
+
+        <div class="card heart invisible" id="10H" data-value="10">
+            <div class="allTopLeft">
+                <div class="cardNumber">10</div>    
+                <img src="./images/heart.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            
+            <div class="shappe9_7"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe9_8 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe9_9"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe9 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe10"><img src="./images/heart.svg" alt="Naipe"></div>
+            <div class="shappe10_1 rotate"><img src="./images/heart.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/heart.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">10</div>
+            </div>
+        </div>
+
+        <div class="card diamond invisible" id="10D" data-value="10">
+            <div class="allTopLeft">
+                <div class="cardNumber">10</div>    
+                <img src="./images/diamond.svg" alt="Naipe" class="naipe topNumLeft"/>
+            </div>
+            <div class="shappe4_1"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4_2"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4_3 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe4 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            
+            <div class="shappe9_7"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe9_8 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe9_9"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe9 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe10"><img src="./images/diamond.svg" alt="Naipe"></div>
+            <div class="shappe10_1 rotate"><img src="./images/diamond.svg" alt="Naipe"></div>
+            
+            <div class="allBottomRight">
+                <img src="./images/diamond.svg" alt="Naipe" class = "naipe bottomNumRight rotate"/>
+                <div class="cardNumber bottomRightNumber rotate">10</div>
+            </div>
+        </div>
+
+       
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>

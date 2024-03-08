@@ -1,0 +1,357 @@
+body {
+    background-color: green;
+
+}
+
+.containerHead {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    
+}
+
+.itemTitle {
+    color: green;
+
+}
+
+.pointsPA{
+    justify-self: flex-start;
+}
+
+.field {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4em;
+    gap: 1em;
+    flex-wrap: wrap;
+    
+}
+
+
+.pA_DeckPos_DPA {
+    width: 7em;
+    height: 10em;
+    padding: 0.4em;
+    border-radius: 0.4em;
+    background-color: grey;
+}
+
+.pA_AtackPos {
+    width: 7em;
+    height: 10em;
+    padding: 0.4em;
+    border-radius: 0.4em;
+    background-color: green;
+    border: 0.1em;
+    border-color: white;
+    border-style: outset;
+
+}
+
+.pB_DeckPos_DPB {
+    width: 7em;
+    height: 10em;
+    padding: 0.4em;
+    border-radius: 0.4em;
+    background-color: grey;
+    
+}
+
+.pB_AtackPos {
+    width: 7em;
+    height: 10em;
+    padding: 0.4em;
+    border-radius: 0.4em;
+    background-color: green;
+    border: 0.1em;
+    border-color: white;
+    border-style: outset;
+
+}
+
+
+
+.textBack {
+    color: white;
+    font-family: fantasy;
+    text-align: right;
+    text-wrap: wrap;
+}
+
+.textBack.author {
+    color: white;
+    font-family: fantasy;
+    text-align: right;
+    font-size: x-small;
+
+}
+
+.next-button {
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.invisible {
+    display: none !important;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+.card.diamond, .card.heart {
+    color: red;
+}
+
+
+/* ***********      CARDS NUMBERS GRID     **************************** */
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr 2fr 2fr 1fr;
+    justify-content: space-between;
+    background-color: white;
+    width: 7em;
+    height: 10em;
+    padding: 0.2em;
+    border-radius: 0.4em;
+
+}
+
+
+.card.diamond , .card.heart{
+    color: red;
+}
+
+/* **********       TOP LEFT       ***************************** */
+
+.cardNumber {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.allTopLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    
+}
+
+
+.naipe.topNumLeft {
+    width: 1em;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    
+}
+
+/* **********       BOTTOM RIGHT       ***************************** */
+
+
+.naipe.bottomNumRight {
+    width: 1em;
+    grid-column-start: 5;
+    grid-row-start: 5;
+    /* order: -1; */
+    /* align-self: self-end; */
+}
+
+.allBottomRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    grid-column-start: 5;
+    /* grid-column-end: 6; */
+    grid-row-start: 5;
+    grid-row-end: 7;
+}
+
+
+/* **********      SHAPPES CARDS A     ************* */
+
+.shappeA {
+
+    width: 4em;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    align-self: center;
+    justify-self: center;
+   
+}
+
+/* **********      SHAPPES CARDS 3     ************* */
+
+.shappe3_1 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end:3;
+}
+
+.shappe3_2 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    align-self: center;
+}
+
+.shappe3_3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 5;
+}
+
+/* **********      SHAPPES CARDS 4     ************* */
+
+.shappe4_1 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end:3;
+}
+
+.shappe4_2 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.shappe4_3 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+.shappe4 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 5;
+    grid-row-end: 6;
+
+}
+
+/* **********      SHAPPES CARDS 5     ************* */
+
+.shappe5 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    align-self: center;
+
+}
+
+/* **********      SHAPPES CARDS 6     ************* */
+
+
+.shappe6_5 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    align-self: center;
+
+}
+.shappe6 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    align-self: center;
+
+}
+
+/* **********      SHAPPES CARDS 7     ************* */
+
+
+
+.shappe7 {
+    grid-column-start: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    align-self: center;
+
+}
+
+/* **********      SHAPPES CARDS 8     ************* */
+
+.shappe8 {
+    grid-column-start: 3;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    align-self: center;
+
+}
+
+/* **********      SHAPPES CARDS 9     ************* */
+
+
+.shappe9_7 {
+    grid-column-start: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    align-self: center;
+
+}
+
+.shappe9_8 {
+    grid-column-start: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    align-self: center;
+
+}
+
+.shappe9_9 {
+    grid-column-start: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    align-self: center;
+
+}
+
+.shappe9 {
+    grid-column-start: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    align-self: center;
+
+}
+
+.shappe9_1 {
+    grid-column-start: 3;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    align-self: center;
+
+}
+
+/* **********      SHAPPES CARDS 10     ************* */
+
+.shappe10 {
+    grid-column-start: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    align-self: center;
+
+}
+
+.shappe10_1 {
+    grid-column-start: 3;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    align-self: center;
+
+}
